@@ -1,8 +1,8 @@
 services:
-  postgres-db:
+  postgres-db-test:
     image: postgres:15
     restart: always
-    container_name: tryckers_postgres
+    container_name: tryckers_postgres_test
     environment:
       POSTGRES_DB: ${POSTGRES_DB}
       POSTGRES_USER: ${POSTGRES_USER}
@@ -10,12 +10,12 @@ services:
     ports:
       - "${POSTGRES_PORT}:5432"
     volumes:
-      - pgdata:/var/lib/postgresql/data
+      - pgdata_test:/var/lib/postgresql/data  
     networks:
-      - tryckers_network
+      - tryckers_network_test 
 
 volumes:
-  pgdata: {}
+  pgdata_test: {}
 
 networks:
-  tryckers_network: {}
+  tryckers_network_test: {}
