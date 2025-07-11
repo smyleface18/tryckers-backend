@@ -43,6 +43,6 @@ Haz clic en "Variables de entorno".
 En la sección Variables del sistema o Variables de usuario, busca la variable llamada Path.
 Haz clic en Editar, luego en Nuevo, y pega la ruta anterior.
 Guarda los cambios y cierra.
-Abre una nueva terminal y, desde la raíz del proyecto, ejecuta en la raiz del proyecto: "air"
+Abre una nueva terminal y, desde la raíz del proyecto, ejecuta en la raiz del proyecto: "air".
 
 
