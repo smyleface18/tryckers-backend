@@ -33,6 +33,12 @@ jobs:
         echo "POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }}" >> .env.test
         echo "POSTGRES_PORT=${{ secrets.POSTGRES_PORT }}" >> .env.test
 
+    - name: Verificar contenido del .env.test (sin secretos)
+      run: |
+        echo "::group::.env.test contiene:"
+        grep -o '^[^=]*' .env.test  # solo imprime los nombres de las variables
+        echo "::endgroup::"
+
     - name: launch DB test 
       run: docker compose --env-file .env.test -f docker-compose.test.yml up -d
 
