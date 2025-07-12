@@ -33,10 +33,10 @@ jobs:
         echo "POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }}" >> .env.test
         echo "POSTGRES_PORT=${{ secrets.POSTGRES_PORT }}" >> .env.test
 
-    - name: Verificar contenido del .env.test (sin secretos)
+    - name: Mostrar valores de .env.test
       run: |
-        echo "::group::.env.test contiene:"
-        grep -o '^[^=]*' .env.test  # solo imprime los nombres de las variables
+        echo "::group::Contenido de .env.test"
+        cat .env.test
         echo "::endgroup::"
 
     - name: launch DB test 
