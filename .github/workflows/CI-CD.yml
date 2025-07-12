@@ -37,8 +37,8 @@ jobs:
     - name: launch DB test 
       run: docker compose --env-file .env.test -f docker-compose.test.yml up -d
       
-    - name: Esperar 10 segundos
-      run: sleep 10
+    - name: await 2 seg
+      run: sleep 2
   
     - name: Test
       run: go test ./src/internal/tests 
